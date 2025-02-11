@@ -29,3 +29,15 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
+  sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # Disabling shallow clones is recommended for improving the relevancy of reporting
+        fetch-depth: 0
+    - name: SonarQube Scan
+      uses: SonarSource/sonarqube-scan-action@4.2.1 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
