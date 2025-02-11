@@ -42,10 +42,10 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
       with:
-        projectBaseDir: app/src
+        projectBaseDir: src/
         args: >
           -Dsonar.organization=davidolufemi # For SonarQube Cloud only
           -Dsonar.projectKey=my-davidolufemi
-          -Dsonar.sources=lib/
+          -Dsonar.sources=src/
           -Dsonar.verbose=true  
       
