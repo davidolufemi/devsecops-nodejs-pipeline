@@ -41,3 +41,11 @@ jobs:
       uses: SonarSource/sonarqube-scan-action@v4.2.1 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+      with:
+        projectBaseDir: app/src
+        args: >
+          -Dsonar.organization=davidolufemi # For SonarQube Cloud only
+          -Dsonar.projectKey=my-davidolufemi
+          -Dsonar.sources=lib/
+          -Dsonar.verbose=true  
+      
