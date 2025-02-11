@@ -45,7 +45,7 @@ jobs:
         projectBaseDir: src/
         args: >
           -Dsonar.organization=davidolufemi # For SonarQube Cloud only
-          -Dsonar.projectKey=my-davidolufemi
+          -Dsonar.projectKey=davidolufemi
           -Dsonar.sources=src/
           -Dsonar.verbose=true  
       
