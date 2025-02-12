@@ -45,7 +45,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
 
 
-  security:
+  snyk-security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
