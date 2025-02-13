@@ -9,6 +9,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read         # Read access to repository contents (default)
+  issues: write           # Write access to issues
+  pull-requests: write    # Write access to pull requests
+  actions: read           # Read access to workflow runs
+
 jobs:
   build:
 
@@ -53,7 +59,7 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
+  
   zap_scan:
     runs-on: ubuntu-latest
     name: Scan the webapplication
