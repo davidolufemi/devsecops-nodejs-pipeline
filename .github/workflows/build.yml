@@ -99,5 +99,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker push ${GITHUB_SHA}
+        run: docker push davidayo97/netflix-clone-app:${GITHUB_SHA}
+
 
