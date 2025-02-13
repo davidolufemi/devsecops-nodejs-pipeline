@@ -76,6 +76,24 @@ jobs:
           target: 'http://54.85.206.95:8081/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'    
- 
+  
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t netflix-clone:latest
 
-          
+      - name: Tag Docker image
+        run: docker tag netflix-clone:latest netflix-latest:${GITHUB_SHA}
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image
+        run: docker push davidayo97/netflix-clone-app:netflix-latest:${GITHUB_SHA}
+
