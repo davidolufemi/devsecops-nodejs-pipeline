@@ -87,7 +87,7 @@ jobs:
 
 
       - name: Tag Docker image
-        run: docker tag netflix-clone:latest netflix-latest:${GITHUB_SHA}
+        run: docker tag netflix-clone:latest davidayo97/netflix-latest:${GITHUB_SHA}
 
       - name: Show Docker images
         run: docker images
