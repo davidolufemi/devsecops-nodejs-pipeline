@@ -83,7 +83,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build Docker image
-        run: docker build -t netflix-clone:latest
+        run: docker build Dockerfile -t netflix-clone:latest .
 
       - name: Tag Docker image
         run: docker tag netflix-clone:latest netflix-latest:${GITHUB_SHA}
