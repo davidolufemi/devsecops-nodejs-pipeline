@@ -1,4 +1,6 @@
-Node.js CI/CD Workflow with SonarQube, Snyk, ZAP, and Docker Build
+**Node.js CI/CD Workflow with SonarQube, Snyk, ZAP, and Docker Build
+**
+
 This GitHub Actions workflow automates the process of building, testing, scanning for security vulnerabilities, and deploying a Node.js application to Docker. It includes steps for:
 
 Installing and caching Node.js dependencies.
