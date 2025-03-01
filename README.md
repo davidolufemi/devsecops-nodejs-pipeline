@@ -12,9 +12,6 @@ Building and pushing a Docker image.
 Workflow Overview
 This workflow contains multiple jobs that run on each push to the main branch or during a pull request to the main branch.
 
-Workflow Structure
-yaml
-Copy
 name: Build
 
 on:
@@ -28,6 +25,7 @@ permissions:
   issues: write           # Write access to issues
   pull-requests: write    # Write access to pull requests
   actions: read           # Read access to workflow runs
+
 Jobs Overview
 1. Build Job
 Objective: Install Node.js dependencies, cache them, build the project, and run tests.
