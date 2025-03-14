@@ -59,6 +59,13 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          
+  snyk-iac:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@master
+       - name: Run Snyk IaC test on the repository
+         run: snyk iac test
   
   zap_scan:
     runs-on: ubuntu-latest
