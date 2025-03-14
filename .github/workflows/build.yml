@@ -63,6 +63,8 @@ jobs:
   snyk-iac:
      runs-on: ubuntu-latest
      steps:
+       - name: install cli
+       - run: npm install -g snyk
        - uses: actions/checkout@master
        - name: Run Snyk IaC test on the repository
          run: snyk iac test
